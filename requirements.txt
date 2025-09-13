@@ -1,0 +1,6 @@
+beautifulsoup4==4.11.1
+matplotlib==3.10.0
+hvplot==0.8.2
+pandas==2.3.2
+plotly==5.11.0
+python-slugify==7.0.0

@@ -3,7 +3,7 @@ from tkinter import ttk
 
 import pandas as pd
 
-NO_OF_ROWS = 7
+NO_OF_COLUMNS = 7
 SEARCH_PLACEHOLDER = "Search..."
 
 
@@ -69,19 +69,19 @@ search_bar.bind("<Return>", filter_data)
 # Create the table
 table = ttk.Treeview(
     frame,
-    columns=df.columns[: NO_OF_ROWS - 1],
+    columns=df.columns[: NO_OF_COLUMNS - 1],
     show="headings",
     height=screen_height,
 )
 table.pack()
 
 # Set the column headings
-for i, col in enumerate(df.columns[:NO_OF_ROWS]):
+for i, col in enumerate(df.columns[:NO_OF_COLUMNS]):
     table.heading(f"#{i+1}", text=col)
 
 # Add the data to the table
 for index, row in df.iterrows():
-    row = list(row)[:NO_OF_ROWS]
+    row = list(row)[:NO_OF_COLUMNS]
     table.insert("", tk.END, values=row)
 
 # Run the main loop
